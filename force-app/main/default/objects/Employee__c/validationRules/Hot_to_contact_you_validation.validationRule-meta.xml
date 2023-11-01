@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hot_to_contact_you_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+    AND( ISPICKVAL( How_to_contact_you__c , &quot;Phone&quot;),  
+         ISBLANK( Mobile_number__c )),
+    AND( ISPICKVAL( How_to_contact_you__c , &quot;Email&quot;),  
+         ISBLANK(  Email__c ))
+)</errorConditionFormula>
+    <errorMessage>Please provide Phone or Email to proceed</errorMessage>
+</ValidationRule>
